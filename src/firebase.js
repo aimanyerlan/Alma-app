@@ -6,13 +6,13 @@ import { getStorage } from 'firebase/storage';
 import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAuxhw1JZmMKi4WiuXCBEQD1Db2f6JSwkU",
-  authDomain: "almauapp-c26cb.firebaseapp.com",
-  projectId: "almauapp-c26cb",
-  storageBucket: "almauapp-c26cb.firebasestorage.app",
-  messagingSenderId: "559698111504",
-  appId: "1:559698111504:web:bbb04524d32ef625c62e95",
-  measurementId: "G-CTLCJC5CW0"
+  apiKey: process.env.EXPO_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.EXPO_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.EXPO_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.EXPO_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
 // В Expo/React Native не используем getAnalytics
@@ -23,4 +23,4 @@ const auth = initializeAuth(app, {
 });
 const storage = getStorage(app);
 
-export { app, firebaseConfig, db, auth, storage }; 
+export { app, firebaseConfig, db, auth, storage };

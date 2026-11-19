@@ -4,13 +4,13 @@ const { getFirestore, collection, addDoc } = require('firebase/firestore');
 const schedule = require('./schedule');
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAuxhw1JZmMKi4WiuXCBEQD1Db2f6JSwkU",
-  authDomain: "almauapp-c26cb.firebaseapp.com",
-  projectId: "almauapp-c26cb",
-  storageBucket: "almauapp-c26cb.firebasestorage.app",
-  messagingSenderId: "559698111504",
-  appId: "1:559698111504:web:bbb04524d32ef625c62e95",
-  measurementId: "G-CTLCJC5CW0"
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
+  measurementId: process.env.FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
@@ -24,4 +24,4 @@ async function uploadSchedule() {
   console.log('All schedule uploaded!');
 }
 
-uploadSchedule().catch(console.error); 
+uploadSchedule().catch(console.error);
